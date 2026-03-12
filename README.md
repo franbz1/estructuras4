@@ -1,0 +1,4 @@
+La app implementa un flujo completo de gestión de pedidos sobre una capa de dominio en TypeScript puro y en memoria: AR crea los requisitos iniciales, AC genera la solicitud de cotización, S la aprueba o la rechaza (con reinicio del ciclo), V revisa y emite la cotización real, AC la acepta o la devuelve con feedback para ajuste, y al aceptarse se convierte en orden para que OE la reciba, programe envío, V facture y AR confirme recepción y pague; en la UI React, cada acción se habilita condicionalmente según el estado actual (QuoteStatus/OrderStatus), con validaciones y manejo de errores del dominio, y sobre colas, no se usa una cola técnica explícita (tipo message broker), sino una cola lógica de trabajo basada en estados y listas en memoria, donde cada entidad “espera” su siguiente acción hasta que el actor correcto procesa ese paso.
+
+https://github.com/user-attachments/assets/9dbbf395-6a33-4040-9ad4-b7f17e82b38c
+
